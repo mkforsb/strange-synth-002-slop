@@ -17,6 +17,12 @@ const FAVICON: Asset = asset!("/assets/favicon.svg");
 const FIRST_PRESET: usize = 1;
 const HISTORY_MAX: usize = 100;
 
+/// `asset!()` URLs are root-absolute (`/assets/...`). Dropping the leading
+/// slash makes them page-relative, so the build can be served from any subfolder.
+fn relative(asset: Asset) -> String {
+    asset.to_string().trim_start_matches('/').to_string()
+}
+
 fn main() {
     dioxus::launch(App);
 }
@@ -183,9 +189,9 @@ fn App() -> Element {
     let started = (synth.started)();
 
     rsx! {
-        document::Stylesheet { href: CSS }
+        document::Stylesheet { href: relative(CSS) }
         document::Title { "OXIDE · a very strange synth" }
-        document::Link { rel: "icon", href: FAVICON }
+        document::Link { rel: "icon", href: relative(FAVICON) }
         div { class: "app",
             TopBar {}
             VisualStrip {}
