@@ -1,0 +1,6 @@
+[application]
+name = "oxide"
+default_platform = "web"
+
+[web.app]
+title = "OXIDE · a very strange synth"

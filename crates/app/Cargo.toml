@@ -1,0 +1,36 @@
+[package]
+name = "oxide-app"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+oxide-core = { path = "../core" }
+dioxus = { version = "=0.7.10", features = ["web"] }
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = [
+    "AnalyserNode",
+    "AudioContext",
+    "AudioContextState",
+    "AudioDestinationNode",
+    "AudioNode",
+    "AudioWorklet",
+    "AudioWorkletNode",
+    "AudioWorkletNodeOptions",
+    "BaseAudioContext",
+    "Blob",
+    "BlobPropertyBag",
+    "CanvasRenderingContext2d",
+    "console",
+    "ChannelSplitterNode",
+    "Document",
+    "Element",
+    "HtmlCanvasElement",
+    "ImageData",
+    "MessageEvent",
+    "MessagePort",
+    "Url",
+    "Window",
+] }
