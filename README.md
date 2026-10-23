@@ -16,7 +16,7 @@ dx serve --platform web            # dev server, http://localhost:8080
 dx build --platform web --release  # static site in target/dx/oxide-app/release/web/public
 ```
 
-`dx build` writes root-absolute `/assets/...` URLs, so that output only works at the web server root. To get a build you can serve from any subfolder, run `tools/build_web.sh` from anywhere instead. It runs the same release build and then rewrites those URLs to page-relative ones. Link to the folder with a trailing slash (`/synth/`, not `/synth`), or the relative paths resolve one level too high.
+`dx build` writes root-absolute `/assets/...` URLs, so that output only works at the web server root. To get a build you can serve from any subfolder, run `make web` (or `tools/build_web.sh` from anywhere) instead. It runs the same release build and then rewrites those URLs to page-relative ones. Link to the folder with a trailing slash (`/synth/`, not `/synth`), or the relative paths resolve one level too high.
 
 Click **IGNITE** to start audio. Browsers only allow audio after a user gesture.
 
